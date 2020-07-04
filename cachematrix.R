@@ -35,7 +35,7 @@ cacheSolve <- function(x, ...) {
         return(inv)
     }
     mat <- x$get()
-    inv <- 1/(mat[1,1]*mat[2,2] - mat[1,2]*mat[2,1]) * matrix(c(mat[2,2], -mat[2,1], -mat[1,2], mat[1,1]))
+    inv <- solve(mat)
     x$setInverse(inv)
     inv
 }
